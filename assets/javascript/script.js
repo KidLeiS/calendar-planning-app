@@ -1,7 +1,10 @@
+// Adding Dayjs advanced format plugin
 dayjs.extend(window.dayjs_plugin_advancedFormat);
 
+//JQuery .ready() notation
 $(function() {
 
+    // Setting a object for the todos
     var toDos = {
         NineAM: "",
         TenAM: "",
@@ -14,20 +17,25 @@ $(function() {
         FivePM: "",
     };
     
-    // var hourNow = parseInt(dayjs().format("H"));
+    // Retrieving the current time as an int
+    var hourNow = parseInt(dayjs().format("H"));
 
-    var hourNow = 13;
+    // Testing for different times
+    // var hourNow = 13;
 
+    // Initialisation function to fetch LocalStorage and render the calendar
     var init = function(){
         $("#currentDay").text("Today's date is: " + dayjs().format('dddd[, ]MMMM [ ] Do'));
         fetchLocal();
         setColor();
     };
 
+    // Function for saving todos into localStorage
     var saveLocal = function(){
         localStorage.setItem("toDos", JSON.stringify(toDos));
     };
 
+    // Function to fetch and render calendar todos from Local Storage
     var fetchLocal = function(){
         if (localStorage.getItem("toDos") != null) {
             toDos = JSON.parse(localStorage.getItem("toDos"));
@@ -39,6 +47,7 @@ $(function() {
         };
     };
 
+    // Function to set color of the calendar
     var setColor = function(){
         var timeKeys = Object.keys(toDos);
 
@@ -53,7 +62,7 @@ $(function() {
         };
     };
 
-
+    // Onclick button listener to save inputs from the current time-block
     $(".container").on("click",".saveBtn",function(event){
         var timeID = $(event.target).parent().attr("id");
         var inputEl = $(event.target).parent().children("input");
@@ -63,6 +72,7 @@ $(function() {
         saveLocal();
     })
 
+    // Initialise the application
     init();
 
     

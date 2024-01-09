@@ -13,7 +13,7 @@ An application for a simple workday planning tool!
 ## About The Project
 Welcome to my workday planning app. Please have fun playing around with the tool (and feel free to use it for your daily ToDos at work!)
 
-I am currently learning third party APIs with eDX's front end coding bootcamp, this is a showcase of the use of jQuery and DayJS to interact with the website and do some simple memory manipulation.
+I am currently learning third party APIs with eDX's front end coding bootcamp, this is a showcase of the use of jQuery and DayJS to interact with the website and the use of localStorage to persist data entries on the page.
 
 ## Built With
 -Javascript, using jQuery and DayJS
